@@ -1,10 +1,20 @@
 pipeline {
-    agent { docker 'python:3.5.1' }
+    agent { docker 'python:3.7' }
+     environment {
+        DISABLE_AUTH = 'true'
+        DB_ENGINE    = 'sqlite'
+    }
     stages {
         stage('build') {
             steps {
                 sh 'python --version'
                 sh 'echo "hello world"'
+                sh 'printenv'
+            }
+        }
+        post {
+        always {
+            junit 'build/reports/**/*.xml'
             }
         }
     }
