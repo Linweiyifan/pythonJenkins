@@ -10,7 +10,7 @@ pipeline {
                 sh 'python --version'
                 sh 'echo "hello world"'
                 sh 'printenv'
-                sh 'python app1.py'
+                sh 'python app.py'
             }
         }
         post {
