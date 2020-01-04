@@ -1,7 +1,7 @@
 pipeline {
     agent { docker 'python' }
      environment {
-        export FLASK_APP=hello.py
+        FLASK_APP=hello.py
     }
     stages {
         stage('build') {
