@@ -1,14 +1,15 @@
 pipeline {
     agent { docker 'python' }
      environment {
-        DISABLE_AUTH = 'true'
-        DB_ENGINE    = 'sqlite'
+        export FLASK_APP=hello.py
     }
     stages {
         stage('build') {
             steps {
-                sh 'echo "hello world"'
-                sh 'python app.py'
+                sh 'echo "测试开始 run run run"'
+                sh 'pip install -r requirements.txt'
+                sh 'flask run'
+                sh 'python test.py'
             }
         }
     }
