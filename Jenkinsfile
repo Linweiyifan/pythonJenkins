@@ -13,10 +13,10 @@ pipeline {
                 sh 'python app.py'
             }
         }
-        post {
-        always {
-            junit 'build/reports/**/*.xml'
-            }
-        }
     }
+    post {
+    always {
+        junit 'build/reports/**/*.xml'
+        }
+    } 
 }
