@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh "apt-update"
+                sh "apt-get update"
                 sh "apt-get install curl"
                 sh "export FLASK_APP=hello.py"
                 sh 'echo "测试开始 run run run"'
