@@ -8,7 +8,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'echo "hello world"'
-                sh 'python -m py_compile sources/app.py'
+                sh 'python app.py'
             }
         }
     }
